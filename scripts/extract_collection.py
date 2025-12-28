@@ -67,7 +67,7 @@ VARIANT_SELECTORS = ["all", "none", "first", "last", "minmedmax"]
 def init_args():
     parser = argparse.ArgumentParser(
         description='Derive feature-model subset according to filtering')
-    parser.add_argument('--show_filter_options',
+    parser.add_argument('--show_filter_options', action='store_true', default=False,
                         help="Show possible values for all filters")
     parser.add_argument('--domains', type=str, nargs="+", default=available_domains,
                         help="Only include feature models belonging to list of domains")
