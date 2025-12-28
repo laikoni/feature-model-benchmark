@@ -389,5 +389,8 @@ elif args.show_filter_options:
 else:
     filter_dict = parse_filter_args(args)
     df_filtered = applyFilter(df_all, filter_dict)
+    if len(df_filtered) == 0:
+        print("No models match the selected filters.")
+        exit()
     create_benchmark_directory(
         df_filtered, args.save_path, filter_dict["OutputFormat"], filter_dict, flat=args.flat)
